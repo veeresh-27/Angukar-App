@@ -1,0 +1,164 @@
+<div
+  class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5"
+>
+  <div
+    class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+    style="max-width: 1000px"
+  >
+    <div class="md:flex w-full">
+      <div class="hidden md:block w-1/2 py-10 px-10">
+        <img src="{{ telephone.image }}" alt="{{ telephone.name }}-pic" />
+      </div>
+      <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+        <div class="text-center mb-10">
+          <h1 class="font-bold text-3xl text-gray-900">Telephone Details</h1>
+          <div *ngIf="display">
+            <p>Enter your information</p>
+          </div>
+          <div *ngIf="!display">
+            <p>Telephone information</p>
+          </div>
+        </div>
+        <div>
+          <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+              <label for="" class="text-xs font-semibold px-1">Id</label>
+              <div class="flex">
+                <div
+                  class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                ></div>
+                <div *ngIf="display">
+                  <input
+                    type="text"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                    placeholder="telephone Id"
+                    [(ngModel)]="telephone.id"
+                  />
+                </div>
+                <div *ngIf="!display">
+                  <input
+                    type="text"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                    placeholder="telephone Id"
+                    disabled=""
+                    [(ngModel)]="telephone.id"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+              <label for="" class="text-xs font-semibold px-1">Name</label>
+              <div class="flex">
+                <div
+                  class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                >
+                  <i class="mdi mdi-account-outline text-gray-400 text-lg"></i>
+                </div>
+                <input
+                  type="text"
+                  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                  placeholder="telephone Name"
+                  [(ngModel)]="telephone.name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-12">
+              <label for="" class="text-xs font-semibold px-1"
+                >Phone Number</label
+              >
+              <div class="flex">
+                <div
+                  class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                >
+                  <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                </div>
+                <input
+                  type="text"
+                  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                  placeholder="Phone Number"
+                  [(ngModel)]="telephone.ph"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <div class="flex">
+                <div class="relative h-10 w-72 min-w-[200px]">
+                  <select
+                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-white px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                    [(ngModel)]="telephone.gender"
+                  >
+                    <option value="gender">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <label
+                    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-blue-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                  >
+                    Gender
+                  </label>
+                </div>
+                <!-- <input
+                  type="text"
+                  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                  placeholder="telephone Address"
+                  [(ngModel)]="telephone.address"
+                /> -->
+              </div>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-12">
+              <label for="" class="text-xs font-semibold px-1"
+                >Image Link</label
+              >
+              <div class="flex">
+                <div
+                  class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
+                >
+                  <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
+                </div>
+                <input
+                  type="text"
+                  class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                  placeholder="Image Link"
+                  [(ngModel)]="telephone.image"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="flex gap-2 w-full px-3 mb-5">
+              <div *ngIf="!display" class="flex gap-2">
+                <button
+                  class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  (click)="updateDetails()"
+                >
+                  Update
+                </button>
+                <button
+                  class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  (click)="deleteTelephone()"
+                  routerLink="/home"
+                >
+                  Delete
+                </button>
+              </div>
+              <div *ngIf="display">
+                <button
+                  class="w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                  (click)="addTelephone()"
+                >
+                  Add telephone
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

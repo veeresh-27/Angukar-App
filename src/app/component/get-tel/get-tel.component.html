@@ -1,0 +1,14 @@
+<div class="bg-gray-900 p-1 flex gap-2">
+  <a
+    class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+    routerLink="/details/add"
+  >
+    Add New Telephone
+  </a>
+</div>
+
+<div class="flex flex-wrap bg-gray-900 min-h-screen p-10">
+  <div *ngFor="let tel of teleList" class="p-2">
+    <app-card-tel [telephone]="tel"></app-card-tel>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+{
+  "telephone": [
+    {
+      "id": 1221,
+      "name": "Johnny",
+      "ph": 9809823121,
+      "gender": "male",
+      "image": "https://p7.hiclipart.com/preview/7/618/505/avatar-icon-fashion-men-vector-avatar.jpg"
+    },
+    {
+      "id": 1222,
+      "name": "Tina",
+      "ph": 8905433121,
+      "gender": "female",
+      "image": ""
+    }
+  ]
+}
